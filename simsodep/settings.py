@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure-u@u1pa$b)oxnuz&$z35fmj3=h+8_%oh^!&y%fb!6oomxg!wk9)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -76,11 +77,8 @@ WSGI_APPLICATION = 'simsodep.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE'  : 'django.db.backends.mysql', # <-- UPDATED line 
-        'NAME'    : 'id20118918_simminhvu',                 # <-- UPDATED line 
-        'USER'    : 'id20118918_trovi1203',                     # <-- UPDATED line
-        'PASSWORD': 'iT+3}5Liu^@%U75j',              # <-- UPDATED line
-        'HOST'    : 'databases.000webhost.com',                # <-- UPDATED line
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME'  : 'db.sqlite3',
     }
 }
 
@@ -120,9 +118,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR /'static'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
-    'simsodep/static',
+    os.path.join(BASE_DIR, 'static')
 ]
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
