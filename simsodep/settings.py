@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'simsodep.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME'  : 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'gh95Qpqnhl6XTVblGOsj',
+        'HOST': 'containers-us-west-41.railway.app',
+        'PORT': '7911',
     }
 }
 
