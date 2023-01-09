@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'category',
+    'accounts',
+    'store',
+    "verify_email.apps.VerifyEmailConfig",
 ]
 
 MIDDLEWARE = [
@@ -71,7 +74,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'simsodep.wsgi.application'
 
+AUTH_USER_MODEL = 'accounts.Account'
 
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.RemoteUserBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
@@ -80,9 +88,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': 'gh95Qpqnhl6XTVblGOsj',
-        'HOST': 'containers-us-west-41.railway.app',
-        'PORT': '7911',
+        'PASSWORD': '0pXHsIHEOYL2VqXeHg8H',
+        'HOST': 'containers-us-west-114.railway.app',
+        'PORT': '6297',
     }
 }
 
@@ -122,11 +130,26 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = BASE_DIR / 'static'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
+    'simsodep/static',
 ]
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# SMTP CONFIG
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'hotrongvinh1234@gmail.com'
+EMAIL_HOST_PASSWORD = 'zdphlwznikwzkgfx'
+
+DEFAULT_FROM_EMAIL = 'noreply<no_reply@domain.com>'
