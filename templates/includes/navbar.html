@@ -1,135 +1,385 @@
 {% load static %}
 
-<header class="section-header">
-  <nav class="navbar p-md-0 navbar-expand-sm navbar-light border-bottom">
+<header class="header">
+  <!-- Top Bar -->
+
+  <div class="top_bar">
     <div class="container">
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarTop4"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarTop4">
-        <ul class="navbar-nav mr-auto">
-          {% comment %}
-          <li class="nav-item dropdown">
-            <a href="#" class="nav-link"> English </a>
-          </li>
-          <li class="nav-item dropdown">
-            <a href="#" class="nav-link"> USD </a>
-          </li>
-          {% endcomment %}
-        </ul>
-        <ul class="navbar-nav">
-          <li>
-            <a href="#" class="nav-link">
-              <i class="fa fa-envelope"></i> hotrongvinh1234@gmail.com
-            </a>
-          </li>
-          <li>
-            <a href="#" class="nav-link">
-              <i class="fa fa-phone"></i> 0342 977 158
-            </a>
-          </li>
-        </ul>
-        <!-- list-inline //  -->
+      <div class="row">
+        <div class="col d-flex flex-row">
+          <div class="top_bar_contact_item">
+            <div class="top_bar_icon">
+              <img src="{% static 'images/phone.png' %}" alt="" />
+            </div>
+            0342977158
+          </div>
+          <div class="top_bar_contact_item">
+            <div class="top_bar_icon">
+              <img src="{% static 'images/mail.png' %}" alt="" />
+            </div>
+            <a><span class="__cf_email__">hotrongvinh1234@gmail.com</span></a>
+          </div>
+          <div class="top_bar_content ml-auto">
+            <div class="top_bar_user">
+              <div class="user_icon">
+                <img src="{% static 'images/user.svg' %}" alt="" />
+              </div>
+              <div><a href="#">Đăng ký</a></div>
+              <div><a href="#">Đăng nhập</a></div>
+            </div>
+          </div>
+        </div>
       </div>
-      <!-- navbar-collapse .// -->
     </div>
-    <!-- container //  -->
+  </div>
+
+  <!-- Header Main -->
+
+  <div class="header_main">
+    <div class="container">
+      <div class="row">
+        <!-- Logo -->
+        <div class="col-lg-2 col-sm-3 col-3 order-1">
+          <div class="logo_container">
+            <img
+              class="logo"
+              src="{% static './images/logo.png' %}"
+              style="max-height: 50px; position: relative"
+            />
+          </div>
+        </div>
+
+        <!-- Search -->
+        <div class="col-lg-6 col-12 order-lg-2 order-3 text-lg-left text-right">
+          <div class="header_search">
+            <div class="header_search_content">
+              <div class="header_search_form_container">
+                <form action="#" class="header_search_form clearfix">
+                  <input
+                    type="search"
+                    required="required"
+                    class="header_search_input"
+                    placeholder="Tìm kiếm sim"
+                  />
+                  <div class="custom_dropdown">
+											<div class="custom_dropdown_list">
+												<span class="custom_dropdown_placeholder clc">Nhà mạng</span>
+												<i class="fas fa-chevron-down"></i>
+												<ul class="custom_list clc">
+													<li><a class="clc" href="#">Viettel</a></li>
+													<li><a class="clc" href="#">Vinaphone</a></li>
+												</ul>
+											</div>
+										</div>
+                  <button
+                    type="submit"
+                    class="header_search_button trans_300"
+                    value="Submit"
+                  >
+                    <img src="{% static 'images/search.png' %}" alt="" />
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Wishlist -->
+        <div class="col-lg-4 col-9 order-lg-3 order-2 text-lg-left text-right">
+          <div
+            class="wishlist_cart d-flex flex-row align-items-center justify-content-end"
+          >
+            <!-- Cart -->
+            <div class="cart">
+              <div
+                class="cart_container d-flex flex-row align-items-center justify-content-end"
+              >
+                <div class="cart_icon">
+                  <img src="{% static 'images/cart.png' %}" alt="" />
+                  <div class="cart_count"><span>10</span></div>
+                </div>
+                <div class="cart_content">
+                  <div class="cart_text"><a href="#">Giỏ hàng</a></div>
+                  <div class="cart_price">$85</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation -->
+
+  <nav class="main_nav">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="main_nav_content d-flex flex-row">
+            <!-- Categories Menu -->
+
+            <div class="cat_menu_container">
+              <div
+                class="cat_menu_title d-flex flex-row align-items-center justify-content-start"
+              >
+                <div class="cat_burger">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="cat_menu_text">Danh mục</div>
+              </div>
+
+              <ul class="cat_menu">
+                <li>
+                  <a href="#"
+                    >Computers & Laptops
+                    <i class="fas fa-chevron-right ml-auto"></i
+                  ></a>
+                </li>
+                <li class="hassubs">
+                  <a href="#">Hardware<i class="fas fa-chevron-right"></i></a>
+                  <ul>
+                    <li>
+                      <a href="#"
+                        >Menu Item<i class="fas fa-chevron-right"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="#"
+                        >Menu Item<i class="fas fa-chevron-right"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="#"
+                        >Menu Item<i class="fas fa-chevron-right"></i
+                      ></a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#"
+                    >Smartphones & Tablets<i class="fas fa-chevron-right"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="#">TV & Audio<i class="fas fa-chevron-right"></i></a>
+                </li>
+                <li>
+                  <a href="#">Gadgets<i class="fas fa-chevron-right"></i></a>
+                </li>
+                <li>
+                  <a href="#"
+                    >Car Electronics<i class="fas fa-chevron-right"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="#"
+                    >Video Games & Consoles<i class="fas fa-chevron-right"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="#"
+                    >Accessories<i class="fas fa-chevron-right"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Main Nav Menu -->
+
+            <div class="main_nav_menu ml-auto">
+              <ul class="standard_dropdown main_nav_dropdown">
+                <li>
+                  <a href="#">Trang chủ<i class="fas fa-chevron-down"></i></a>
+                </li>
+                <li class="hassubs">
+                  <a href="#">Bài viết<i class="fas fa-chevron-down"></i></a>
+                  <ul>
+                    <li>
+                      <a href="#"
+                        >Menu Item<i class="fas fa-chevron-down"></i
+                      ></a>
+                      <ul>
+                        <li>
+                          <a href="#"
+                            >Menu Item<i class="fas fa-chevron-down"></i
+                          ></a>
+                        </li>
+                        <li>
+                          <a href="#"
+                            >Menu Item<i class="fas fa-chevron-down"></i
+                          ></a>
+                        </li>
+                        <li>
+                          <a href="#"
+                            >Menu Item<i class="fas fa-chevron-down"></i
+                          ></a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="blog.html"
+                    >Liên hệ<i class="fas fa-chevron-down"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Menu Trigger -->
+
+            <div class="menu_trigger_container ml-auto">
+              <div
+                class="menu_trigger d-flex flex-row align-items-center justify-content-end"
+              >
+                <div class="menu_burger">
+                  <div class="menu_trigger_text">menu</div>
+                  <div class="cat_burger menu_burger_inner">
+                    <span></span><span></span><span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </nav>
 
-  <section class="header-main border-bottom">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-2 col-md-3 col-6">
-          <a href="./" class="brand-wrap">
-            <img class="logo" src="{% static './images/logo.png' %}" />
-          </a>
-          <!-- brand-wrap.// -->
-        </div>
-        <div class="col-lg col-sm col-md col-6 flex-grow-0">
-          <div class="category-wrap dropdown d-inline-block float-right">
-            <button
-              type="button"
-              class="btn btn-primary dropdown-toggle"
-              data-toggle="dropdown"
-            >
-              <i class="fa fa-bars"></i> All category
-            </button>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#"
-                >Machinery / Mechanical Parts / Tools
-              </a>
-              <a class="dropdown-item" href="#"
-                >Consumer Electronics / Home Appliances
-              </a>
-              <a class="dropdown-item" href="#">Auto / Transportation</a>
-              <a class="dropdown-item" href="#"
-                >Apparel / Textiles / Timepieces
-              </a>
-              <a class="dropdown-item" href="#"
-                >Home & Garden / Construction / Lights
-              </a>
-              <a class="dropdown-item" href="#"
-                >Beauty & Personal Care / Health
-              </a>
-            </div>
-          </div>
-          <!-- category-wrap.// -->
-        </div>
-        <!-- col.// -->
-        <a href="./store.html" class="btn btn-outline-primary">Store</a>
-        <div class="col-lg col-md-6 col-sm-12 col">
-          <form action="#" class="search">
-            <div class="input-group w-100">
-              <input
-                type="text"
-                class="form-control"
-                style="width: 60%"
-                placeholder="Search"
-              />
+  <!-- Menu -->
 
-              <div class="input-group-append">
-                <button class="btn btn-primary" type="submit">
-                  <i class="fa fa-search"></i>
-                </button>
+  <div class="page_menu">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="page_menu_content">
+            <div class="page_menu_search">
+              <form action="#">
+                <input
+                  type="search"
+                  required="required"
+                  class="page_menu_search_input"
+                  placeholder="Tìm kiếm sim"
+                />
+              </form>
+            </div>
+            <ul class="page_menu_nav">
+              <li class="page_menu_item">
+                <a href="#">Trang chủ<i class="fa fa-angle-down"></i></a>
+              </li>
+              <li class="page_menu_item has-children">
+                <a href="#">Super Deals<i class="fa fa-angle-down"></i></a>
+                <ul class="page_menu_selection">
+                  <li>
+                    <a href="#">Super Deals<i class="fa fa-angle-down"></i></a>
+                  </li>
+                  <li class="page_menu_item has-children">
+                    <a href="#">Menu Item<i class="fa fa-angle-down"></i></a>
+                    <ul class="page_menu_selection">
+                      <li>
+                        <a href="#"
+                          >Menu Item<i class="fa fa-angle-down"></i
+                        ></a>
+                      </li>
+                      <li>
+                        <a href="#"
+                          >Menu Item<i class="fa fa-angle-down"></i
+                        ></a>
+                      </li>
+                      <li>
+                        <a href="#"
+                          >Menu Item<i class="fa fa-angle-down"></i
+                        ></a>
+                      </li>
+                      <li>
+                        <a href="#"
+                          >Menu Item<i class="fa fa-angle-down"></i
+                        ></a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#">Menu Item<i class="fa fa-angle-down"></i></a>
+                  </li>
+                  <li>
+                    <a href="#">Menu Item<i class="fa fa-angle-down"></i></a>
+                  </li>
+                  <li>
+                    <a href="#">Menu Item<i class="fa fa-angle-down"></i></a>
+                  </li>
+                </ul>
+              </li>
+              <li class="page_menu_item has-children">
+                <a href="#">Featured Brands<i class="fa fa-angle-down"></i></a>
+                <ul class="page_menu_selection">
+                  <li>
+                    <a href="#"
+                      >Featured Brands<i class="fa fa-angle-down"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#">Menu Item<i class="fa fa-angle-down"></i></a>
+                  </li>
+                  <li>
+                    <a href="#">Menu Item<i class="fa fa-angle-down"></i></a>
+                  </li>
+                  <li>
+                    <a href="#">Menu Item<i class="fa fa-angle-down"></i></a>
+                  </li>
+                </ul>
+              </li>
+              <li class="page_menu_item has-children">
+                <a href="#">Trending Styles<i class="fa fa-angle-down"></i></a>
+                <ul class="page_menu_selection">
+                  <li>
+                    <a href="#"
+                      >Trending Styles<i class="fa fa-angle-down"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#">Menu Item<i class="fa fa-angle-down"></i></a>
+                  </li>
+                  <li>
+                    <a href="#">Menu Item<i class="fa fa-angle-down"></i></a>
+                  </li>
+                  <li>
+                    <a href="#">Menu Item<i class="fa fa-angle-down"></i></a>
+                  </li>
+                </ul>
+              </li>
+              <li class="page_menu_item">
+                <a href="blog.html">Bài viết<i class="fa fa-angle-down"></i></a>
+              </li>
+              <li class="page_menu_item">
+                <a href="contact.html"
+                  >Liên hệ<i class="fa fa-angle-down"></i
+                ></a>
+              </li>
+            </ul>
+
+            <div class="menu_contact">
+              <div class="menu_contact_item">
+                <div class="menu_contact_icon">
+                  <img src="images/phone_white.png" alt="" />
+                </div>
+                0342 977 158
+              </div>
+              <div class="menu_contact_item">
+                <div class="menu_contact_icon">
+                  <img src="images/mail_white.png" alt="" />
+                </div>
+                <a
+                  ><span class="__cf_email__"
+                    >hotrongvinh1234@gmail.com</span
+                  ></a
+                >
               </div>
             </div>
-          </form>
-          <!-- search-wrap .end// -->
-        </div>
-        <!-- col.// -->
-        <div class="col-lg-3 col-sm-6 col-8 order-2 order-lg-3">
-          <div class="d-flex justify-content-end mb-3 mb-lg-0">
-            <div class="widget-header">
-              <small class="title text-muted">Welcome guest!</small>
-              <div>
-                <a href="./signin.html">Sign in</a>
-                <span class="dark-transp"> | </span>
-                <a href="./register.html"> Register</a>
-              </div>
-            </div>
-            <a href="./cart.html" class="widget-header pl-3 ml-3">
-              <div class="icon icon-sm rounded-circle border">
-                <i class="fa fa-shopping-cart"></i>
-              </div>
-              <span class="badge badge-pill badge-danger notify">0</span>
-            </a>
           </div>
-          <!-- widgets-wrap.// -->
         </div>
-        <!-- col.// -->
       </div>
-      <!-- row.// -->
     </div>
-    <!-- container.// -->
-  </section>
-  <!-- header-main .// -->
+  </div>
 </header>
 <!-- section-header.// -->

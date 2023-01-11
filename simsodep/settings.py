@@ -40,8 +40,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'category',
     'accounts',
+    'simsodep',
     'store',
     "verify_email.apps.VerifyEmailConfig",
+    'rest_framework',
+    'django.contrib.humanize',
+    'simsodep.thousand_separator'
 ]
 
 MIDDLEWARE = [
@@ -52,7 +56,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 ]
+
+USE_THOUSAND_SEPARATOR = True
 
 ROOT_URLCONF = 'simsodep.urls'
 
@@ -117,14 +124,19 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'vi-VN'
 
-TIME_ZONE = 'UTC'
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, 'locale'),
+]
+
+TIME_ZONE = 'Asia/Ho_Chi_Minh'
 
 USE_I18N = True
 
 USE_TZ = True
 
+USE_L10N = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
