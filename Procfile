@@ -1,1 +1,1 @@
-web: gunicorn simsodep.wsgi --log-file -
+gunicorn simsodep.wsgi:application
