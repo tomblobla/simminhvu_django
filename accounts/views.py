@@ -28,11 +28,15 @@ def register(request):
 
 def login_view(request):
     if request.method == 'POST':
+
+        form = LoginForm(request.POST)
         # Get the data from the form
         username = request.POST.get('username')
         password = request.POST.get('password')
+        print(username, password)
         # Check if the user exists
-        user = authenticate(request, username=username, password=password)
+        user = authenticate(username=username, password=password)
+        # user = form.get_user()
         if user is not None:
             # Log the user in
             login(request, user)

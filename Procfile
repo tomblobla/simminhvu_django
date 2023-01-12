@@ -1,2 +1,2 @@
-web: gunicorn simsodep.wsgi --log-file -
+web: gunicorn simsodep_django.wsgi --log-file -
 
