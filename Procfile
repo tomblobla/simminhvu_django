@@ -1,1 +1,1 @@
-gunicorn simsodep.wsgi:application
+web: gunicorn 'simsodep.wsgi'
