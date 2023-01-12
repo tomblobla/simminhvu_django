@@ -6,7 +6,6 @@
 {% load humanize %}
 <!-- Banner -->
 {% block content %}
-
 <style>
   .bannerbgr {
     background-image: url("{% static "images/banner_background.jpg" %}");
@@ -52,10 +51,10 @@
           class="char_item d-flex flex-row align-items-center justify-content-start"
         >
           <div class="char_icon">
-            <img src="{{ prod.category.image.url }}" alt="" />
+            <img src="{{ prod.category_image }}" alt="" />
           </div>
           <div class="char_content">
-            <div class="char_title">{{ prod.name }}</div>
+            <div class="char_title"><a href="/shop/{{prod.category_slug}}/{{ prod.slug }}">{{ prod.name }}</a></div>
             <div class="char_subtitle">
 				{{ prod.get_saleprice|floatformat:0|intcomma:False }} VNĐ
 				<small class="text-danger">(-{{ prod.sale_off }}%)</small>
@@ -82,4 +81,4 @@
   </div>
 </div>
 
-{% endblock %}
+{% endblock content %}

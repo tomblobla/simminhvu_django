@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     "verify_email.apps.VerifyEmailConfig",
     'rest_framework',
     'django.contrib.humanize',
-    'simsodep.thousand_separator'
 ]
 
 MIDDLEWARE = [
@@ -84,7 +83,6 @@ WSGI_APPLICATION = 'simsodep.wsgi.application'
 AUTH_USER_MODEL = 'accounts.Account'
 
 AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.RemoteUserBackend',
     'django.contrib.auth.backends.ModelBackend',
 )
 # Database

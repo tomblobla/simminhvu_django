@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, Tag
+from .models import Product, Tag, Order
 
 # Register your models here.
 
@@ -30,5 +30,21 @@ class TagAdmin(admin.ModelAdmin):
     )
 
 
+class OrderAdmin(admin.ModelAdmin):
+    list_display = (
+        'SIM', 'address', 'ISP', 'Username',
+    )
+
+    def ISP(self, obj):
+        return obj.product.category.name
+
+    def SIM(self, obj):
+        return obj.product.name
+
+    def Username(self, obj):
+        return obj.user.username
+
+
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Tag, TagAdmin)
+admin.site.register(Order, OrderAdmin)

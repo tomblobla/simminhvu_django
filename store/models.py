@@ -1,4 +1,5 @@
 from django.db import models
+from accounts.models import Account
 from category.models import Category
 from django.core.validators import MaxValueValidator, MinValueValidator
 # Create your models here.
@@ -28,13 +29,21 @@ class Product(models.Model):
         ]
     )
 
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.ForeignKey(
+        Category, on_delete=models.CASCADE, related_name='products')
 
-    tags = models.ManyToManyField(Tag, related_name='products')
+    tags = models.ManyToManyField(
+        Tag, related_name='products')
 
     def __str__(self):
         return self.name
-    
+
     def get_saleprice(self):
         new_price = self.price * (100 - self.sale_off) / 100
         return new_price
+
+
+class Order(models.Model):
+    user = models.ForeignKey(Account, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    address = models.TextField()
